@@ -75,10 +75,10 @@ namespace ts.server.typingsInstaller {
     };
 
     export abstract class TypingsInstaller {
-        private readonly packageNameToTypingLocation = new StringMap<string>();
+        private readonly packageNameToTypingLocation = createStringMap<string>();
         private readonly missingTypingsSet = new StringSet();
         private readonly knownCachesSet = new StringSet();
-        private readonly projectWatchers = new StringMap<FileWatcher[]>();
+        private readonly projectWatchers = createStringMap<FileWatcher[]>();
         readonly pendingRunRequests: PendingRequest[] = [];
 
         private installRunCount = 1;

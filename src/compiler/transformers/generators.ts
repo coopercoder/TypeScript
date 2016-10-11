@@ -217,7 +217,7 @@ namespace ts {
         Endfinally = 7,
     }
 
-    const instructionNames = new NumberMap<Instruction, string>([
+    const instructionNames = createNumberMap<Instruction, string>([
         [Instruction.Return, "return"],
         [Instruction.Break, "break"],
         [Instruction.Yield, "yield"],
@@ -2078,7 +2078,7 @@ namespace ts {
 
             if (!renamedCatchVariables) {
                 renamedCatchVariables = new StringSet();
-                renamedCatchVariableDeclarations = new NumberMap<number, Identifier>();
+                renamedCatchVariableDeclarations = createNumberMap<number, Identifier>();
                 context.enableSubstitution(SyntaxKind.Identifier);
             }
 

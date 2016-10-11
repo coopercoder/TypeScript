@@ -647,7 +647,7 @@ namespace ts.server {
             }
             const configDirectoryPath = getDirectoryPath(this.configFileName);
 
-            this.directoriesWatchedForWildcards = new StringMap<FileWatcher>();
+            this.directoriesWatchedForWildcards = createStringMap<FileWatcher>();
             this.wildcardDirectories.forEach((flag, directory) => {
                 if (comparePaths(configDirectoryPath, directory, ".", !this.projectService.host.useCaseSensitiveFileNames) !== Comparison.EqualTo) {
                     const recursive = (flag & WatchDirectoryFlags.Recursive) !== 0;
